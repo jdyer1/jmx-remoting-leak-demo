@@ -42,6 +42,9 @@ public class DemonstrateResourceLeak {
             try {
                 connector = JMXConnectorFactory.connect(url);
             } catch (Exception e) {
+                if(i==0) {
+                    e.printStackTrace();
+                }
                 if (connector != null) {
                     nonNull++;
                     try {
