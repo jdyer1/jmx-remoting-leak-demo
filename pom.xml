@@ -22,7 +22,7 @@
 		<dependency>
 			<groupId>org.jboss.remotingjmx</groupId>
 			<artifactId>remoting-jmx</artifactId>
-			<version>3.0.0.Final</version>
+			<version>3.0.2.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.logging</groupId>
