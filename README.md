@@ -1,5 +1,5 @@
 # JMX-Remoting Memory Leak Demonstration
-Using `org.jboss.remoting:jboss-remoting:5.0.8.Final` and `org.jboss.remotingjmx:remoting-jmx:3.0.0.Final`, a memory leak occurs whenever a new JMX connection is unsuccessful.  These are the versions used by JBoss EAP 6.2.0 and Wildfly 14.  The memory leak occurs in the JMX client, that is, the monitoring software, not in Jboss/Wildfly itself.  
+Using `org.jboss.remoting:jboss-remoting:5.0.8.Final` and `org.jboss.remotingjmx:remoting-jmx:3.0.0.Final`, a memory leak occurs whenever a new JMX connection is unsuccessful.  These are the versions used by JBoss EAP 7.2.0 and Wildfly 14.  The memory leak occurs in the JMX client, that is, the monitoring software, not in Jboss/Wildfly itself.  
 
 To run:
 1. clone the project
