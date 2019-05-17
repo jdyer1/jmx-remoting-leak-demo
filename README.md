@@ -18,7 +18,9 @@ $ java -version
 openjdk version "1.8.0_201"
 OpenJDK Runtime Environment (build 1.8.0_201-b09)
 OpenJDK 64-Bit Server VM (build 25.201-b09, mixed mode)
+```
 
+```
 $ java -Xms512m -Xmx512m -jar target/jmx-remoting-fail-demo.jar Y
 Using jboss jmx remoting url: service:jmx:remote+http://localhost:1234
 Fri May 17 09:20:38 CDT 2019 | begin with  bytes free: 511813928
@@ -51,8 +53,9 @@ Fri May 17 09:21:11 CDT 2019 | tried 18000 | returned non-null 0 | exception thr
 Fri May 17 09:21:13 CDT 2019 | tried 19000 | returned non-null 0 | exception thrown closing 0 bytes Free= 267712224
 Fri May 17 09:21:14 CDT 2019 | tried 20000 | returned non-null 0 | exception thrown closing 0 bytes Free= 255028392
 Half of the memory is gone, even after full gc. exiting.
+```
 
-
+```
 $ java -Xms512m -Xmx512m -jar target/jmx-remoting-fail-demo.jar N
 Using non-jboss jmx rmi url: service:jmx:rmi:///jndi/rmi://localhost:1234/jmxrmi
 Fri May 17 09:21:25 CDT 2019 | begin with  bytes free: 511813800
