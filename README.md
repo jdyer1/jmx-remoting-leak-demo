@@ -9,6 +9,8 @@ To run:
 
 In `org.jboss.remotingjmx.RemotingConnector`, the instance of `org.jboss.remoting3.Endpoint` created in method `internalRemotingConnect` is not closed upon failure.  The `Endpoint` contains an inner class instance extending `org.jboss.remoting3.EndpointImpl$MapRegistration` which has a Finalizer (via parent `AbstractHandleableCloseable`).  These Finalizer instances accumulate in the heap and are not destroyed via GC.
 
+Additional memory is leaked via the `com.sun.jmx.mbeanserver.Repository` held by the `JmxMBeanServer`.  When creating the `org.jboss.remoting3.EndpointImpl$MapRegistration`, a new MBean is added to the `Repository`.  These are never unregistered, and thus they accumulate in the `Repository`.  They would be unregistered had `EnpPointImpl#closeComplete` been called.  (The complexity of the close logic makes it unclear under which circumstances closeComplete is called.  Also, EnpointImpl is an instance variable in RemotingConnector, so it is possible this gets called later or by another thread, before a new instance is assigned to the same variable.  However, heap dumps suggest otherwise.)
+
 
 ```
 $ cat /proc/version
